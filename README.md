@@ -16,4 +16,56 @@
 
 ### Installation
 To install AegisEncrypt, follow these steps:
+## Linux/macOS
+Clone the repository or download the source code:
+```
+git clone https://github.com/gryphonribz/AegisEncrypt.git
+cd AegisEncrypt
+```
 
+Compile the program:
+```
+gcc -o AegisEncrypt main.c -lcrypto
+```
+
+Install (optional):
+```
+sudo cp AegisEncrypt /usr/local/bin
+```
+
+## Windows
+1.Ensure MinGW and OpenSSL are properly installed and configured.
+2.Compile using:
+```
+gcc -o AegisEncrypt.exe main.c -lcrypto -lssl
+```
+
+### Usage
+Run `AegisEncrypt` from the command line using the following syntax:
+```
+AegisEncrypt -i <input_file> -o <output_file> -p <passphrase> -e|-d
+```
+
+### Parameters:
+- `-i <input_file>`: Specify the input file path.
+- `-o <output_file>`: Specify the output file path.
+- `-p <passphrase>`: Passphrase from which the encryption key is derived.
+- `-e`: Encrypt the input file.
+- `-d`: Decrypt the input file.
+
+### Examples:
+#### Encrypt a file:
+```
+./AegisEncrypt -i plain.txt -o encrypted.aes -p "mysecurepassphrase" -e
+```
+
+#### Decrypt a file:
+```
+./AegisEncrypt -i encrypted.aes -o decrypted.txt -p "mysecurepassphrase" -d
+```
+
+### Contributing
+Contributions to AegisEncrypt are welcome! Please fork the repository and submit pull requests with your enhancements, or open issues for bugs or feature requests.
+
+### License
+AegisEncrypt is licensed under the GNU GPL V3 License. See the LICENSE file for more details.
